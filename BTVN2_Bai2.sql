@@ -1,0 +1,19 @@
+CREATE TABLE Departments(
+	DepartmentID INT PRIMARY KEY NOT NULL,
+    DepartmentName VARCHAR(255) NULL,
+	FOREIGN KEY (LocationID) REFERENCES Location(LocationID)
+);
+
+CREATE TABLE Location(
+	LocationID INT PRIMARY KEY NOT NULL,
+    Street VARCHAR(255) NULL,
+    Province VARCHAR(255) NULL
+);
+
+CREATE TABLE City(
+	CityID INT PRIMARY KEY NOT NULL,
+    CityName VARCHAR(255) NULL,
+    CapitalName VARCHAR(255) NULL
+);
+
+SELECT * FROM City
