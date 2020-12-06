@@ -324,8 +324,34 @@ INNER JOIN actor USING(act_id)
 WHERE mov_id = (SELECT mov_id WHERE move_title = "China Town");
 
 SELECT move_title FROM movie 
-INNER JOIN movie_cast ;
+INNER JOIN movie_cast USING(mov_id) 
+INNER JOIN actor USING(act_id)
+WHERE act_fname = 'Harrison' AND act_lname = 'Ford';
 
+SELECT move_title, mov_year, rev_stars, mov_rel_country FROM movie
+INNER JOIN rating USING(mov_id)
+WHERE rev_stars IN (SELECT MAX(rev_stars) FROM rating);
+
+SELECT move_title, mov_year, rev_stars FROM movie
+INNER JOIN rating USING(mov_id)
+INNER JOIN movie_genres USING(mov_id)
+INNER JOIN genres USING(gen_id)
+WHERE gen_title = 'Mystery' AND rev_stars IN(SELECT MAX(rev_stars) FROM rating);
+
+SELECT mov_year, COUNT(mov_id) AS 'Number of movies', AVG(rev_stars) AS 'Average rating' FROM movie
+INNER JOIN rating USING(mov_id)
+INNER JOIN movie_genres USING(mov_id)
+INNER JOIN genres USING(gen_id) 
+WHERE gen_title = 'Mystery';
+
+SELECT move_title, CONCAT(act_lname, ' ', act_fname) AS 'Actor name', mov_year, role, gen_title, CONCAT(dir_lname, ' ', dir_fname) AS 'Director name', mov_year, rev_stars FROM movie
+INNER JOIN rating USING(mov_id)
+INNER JOIN movie_genres USING(mov_id)
+INNER JOIN genres USING(gen_id) 
+INNER JOIN movie_direction USING(mov_id)
+INNER JOIN director USING(dir_id)
+INNER JOIN movie_cast USING(mov_id)
+INNER JOIN actor USING(act_id);
 
 
 
