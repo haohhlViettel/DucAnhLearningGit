@@ -11,13 +11,14 @@ def binarySearch(aList, item):
             j = mid - 1
     return 
 
-def sortSelection(aList):
+def sortSelectiontest(aList):
     #find all mins 
     #Swap it with the start position if the current ele is smaller
     #Increase the start position by 1 after the swap
     
     for i in range(len(aList)):
-        
+        b = 15;
+        print(b);
         minIdx = findMin(aList, i)
         print(minIdx)
         swap(i, minIdx, aList)
@@ -39,7 +40,9 @@ def swap(start, minIdx, aList):
     temp            = aList[start]
     aList[start]    = aList[minIdx]
     aList[minIdx]   = temp
-    
+    a = 0;
+    b = 0;
+    c = 0;
         
 
 def insertionSort(aList):
@@ -53,7 +56,9 @@ def insertionSort(aList):
             swap(prevIdx, currentIdx, aList)
             prevIdx     -= 1
             currentIdx  -= 1
-            
+    a = 1;
+    b = 1;
+    c = 1;
     return aList
         
         
@@ -68,6 +73,11 @@ def merge(aList, bList):
             newArray.append(bList[j])
             j += 1
             
+    if i == len(aList):
+        newArray.extend(bList[j:])
+    else:
+        newArray.extend(aList[i:])
+        
     if i == len(aList):
         newArray.extend(bList[j:])
     else:
