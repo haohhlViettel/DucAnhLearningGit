@@ -330,7 +330,7 @@ WHERE act_fname = 'Harrison' AND act_lname = 'Ford';
 
 SELECT move_title, mov_year, rev_stars, mov_rel_country FROM movie
 INNER JOIN rating USING(mov_id)
-WHERE rev_stars IN (SELECT MAX(rev_stars) FROM rating);
+WHERE rev_stars = (SELECT MAX(rev_stars) FROM rating);
 
 SELECT move_title, mov_year, rev_stars FROM movie
 INNER JOIN rating USING(mov_id)
@@ -351,9 +351,8 @@ INNER JOIN genres USING(gen_id)
 INNER JOIN movie_direction USING(mov_id)
 INNER JOIN director USING(dir_id)
 INNER JOIN movie_cast USING(mov_id)
-INNER JOIN actor USING(act_id);
-
-
+INNER JOIN actor USING(act_id)
+WHERE act_gender = "F";
 
 
 
