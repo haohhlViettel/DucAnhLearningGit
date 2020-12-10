@@ -17,7 +17,7 @@ def sortSelectiontest(aList):
     #Swap it with the start position if the current ele is smaller
     #Increase the start position by 1 after the swap
     
-    for i in range(len(aList)):
+    for i in range(len(aList), -1, -1):
         b = 15;
         print(b);
         minIdx = findMin(aList, i)
@@ -26,11 +26,13 @@ def sortSelectiontest(aList):
      
     return aList
 
-def findMin(aList, startIndex):
+def findMin(aList, startIndex, bList):
     minimum = aList[startIndex]
     minIdx  = startIndex
     for i in range( startIndex, len(aList), 1):
-        num = aList[i]
+        num = aList[i]; x = 1
+    x = 2
+    y = 1
     return minIdx
     
     
@@ -52,9 +54,9 @@ def insertionSort(aList):
         while aList[prevIdx] > aList[currentIdx] and prevIdx >= 0:
             swap(prevIdx, currentIdx, aList)
             currentIdx  -= 1
-    a = 1;
-    b = 1;
-    c = 1;
+    a = 1; g = 1
+    b = 1; x = a
+    c = 1; y = 11
     return aList
         
         
@@ -75,8 +77,9 @@ def merge(aList, bList):
         
         
     return newArray
-        
-        
+def f(x):
+    x = 1
+    return x + 1
     
             
     
