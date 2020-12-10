@@ -1,4 +1,4 @@
 # DucAnhLearningGit
 
-Bates
+University Science And Technology
 1905
