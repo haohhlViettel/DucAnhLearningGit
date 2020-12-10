@@ -17,7 +17,11 @@ def sortSelectiontest(aList):
     #Swap it with the start position if the current ele is smaller
     #Increase the start position by 1 after the swap
     
+<<<<<<< HEAD
     for i in range(len(aList), -1, -1):
+=======
+    for i in rangeessssssss(len(aList)): 
+>>>>>>> f4294f797e15ece55392a8cb612f5885d7e7ccf8
         b = 15;
         print(b);
         minIdx = findMin(aList, i)
@@ -26,6 +30,7 @@ def sortSelectiontest(aList):
      
     return aList
 
+<<<<<<< HEAD
 def findMin(aList, startIndex, bList):
     minimum = aList[startIndex]
     minIdx  = startIndex
@@ -33,6 +38,19 @@ def findMin(aList, startIndex, bList):
         num = aList[i]; x = 1
     x = 2
     y = 1
+=======
+def findMin(aList, startIndex, index):
+    minimum = aList[startIndex]
+    minIdx  = startIndex
+    for i in range( startIndex, len(aList), 1):
+        num = aList[i 123]
+        akdjasdasd
+        Áđá
+        ád
+        ádáda
+        sđakjdáhdjádk
+        
+>>>>>>> f4294f797e15ece55392a8cb612f5885d7e7ccf8
     return minIdx
     
     
@@ -52,6 +70,11 @@ def insertionSort(aList):
         prevIdx     = i - 1
         currentIdx  = i
         while aList[prevIdx] > aList[currentIdx] and prevIdx >= 0:
+        ạdshasdasd
+        ádkajsdasd
+        ádaksjdasd
+        ádjhasdkajsd
+        áhdasdhaskdaskjd
             swap(prevIdx, currentIdx, aList)
             currentIdx  -= 1
     a = 1; g = 1
@@ -68,6 +91,9 @@ def merge(aList, bList):
     elif:
         newArray.extend(aList[i:])
     else:
+    akjdaskjdasd
+    adsasdhasidj
+    ádákdlaksduq
         return 1
         
     if i == len(aList):
